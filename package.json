@@ -1,0 +1,46 @@
+{
+  "name": "nodefetch-jest-api-test-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maheshthota31/nodefetch-jest-api-test-framework.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maheshthota31/nodefetch-jest-api-test-framework/issues"
+  },
+  "homepage": "https://github.com/maheshthota31/nodefetch-jest-api-test-framework#readme",
+  "dependencies": {
+    "jest": "^27.0.6",
+    "jest-html-reporters": "^2.1.6",
+    "jest-slack-integration": "^1.0.17",
+    "node-fetch": "^2.6.1"
+  },
+  "jest": {
+    "verbose": false,
+    "testResultsProcessor": "./node_modules/jest-slack-integration",
+    "reporters": [
+      "default",
+      [
+        "jest-html-reporters",
+        {
+          "publicPath": "./html-report",
+          "filename": "report.html",
+          "includeFailureMsg": true,
+          "pageTitle": "node fetch api automation framework",
+          "openReport": false
+        }
+      ]
+    ]
+  },
+  "jestSlackIntegration": {
+    "webhookUrl": "https://your.slack.webhook.url",
+    "appName": "nodefetch slack integration"
+  }
+}
